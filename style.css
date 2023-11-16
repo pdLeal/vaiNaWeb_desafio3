@@ -1,0 +1,166 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    ;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-hero: #129799;
+    --bg-body: #FFA185;
+    --white: whitesmoke;
+}
+
+body {
+    background-color: var(--bg-body);
+}
+
+/* UTILITY CLASSES */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.list {
+    margin: 0 auto;
+    padding: 1.5em;
+    font-size: clamp(14px, 3vw, 20px);
+    color: var(--white);
+    justify-content: space-evenly;
+}
+
+/* HEADER */
+header {
+    background-color: var(--bg-hero);
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav > ul > li:first-child {
+    font-weight: 700;
+}
+
+
+/* HERO */
+.hero {
+    color: var(--white);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+}
+
+.hero-img {
+    width: clamp(250px, 50vw, 560px);
+}
+
+.batida {
+    animation: heartBeat 500ms ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* MAIN  */
+main {
+    width: 80vw;
+    max-width: 1200px;
+    margin: 48px auto;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+h2 {
+    color: var(--white);
+}
+
+.galeria {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.img-galeria {
+    width: clamp(100px, 80vw, 500px);
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    box-shadow: 0 0 10px 0px hsla(0, 0%, 0%, 0.2);
+}
+
+main > :first-child {
+    align-self: flex-start;
+}
+
+main > :last-child {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+/* FOOTER */
+footer {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-hero);
+}
+
+
+.container-footer {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-footer {
+    width: 30px;
+}
+
+.footer-list {
+    width: 50%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+/* RESPONSIVO */
+@media only screen and (min-width:750px) {
+    .img-galeria {
+        width: clamp(100px, 35vw, 560px);
+    }
+}
