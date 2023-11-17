@@ -123,10 +123,18 @@ main > :first-child {
     align-self: flex-start;
 }
 
-main > :last-child {
+main > :nth-last-child(2) {
     font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 600;
     margin-top: 24px;
+}
+
+main > button {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: -20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 /* FOOTER */
