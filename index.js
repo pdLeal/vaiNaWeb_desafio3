@@ -45,11 +45,11 @@ function changeQuery() {
         this.classList.add("selecionado");
         
         if(this.classList.contains("arte")) {
-            query = "arteanddesign";
+            query = "arte_and_design";
         } else if (this.classList.contains("estilo")) {
-            query = "styleandmusic";
+            query = "style_and_music";
         } else {
-            query = "e-bookandvideos";
+            query = "technology_and_future";
         }
 
     } else {

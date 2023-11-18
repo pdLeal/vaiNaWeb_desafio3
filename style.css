@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    ;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -122,6 +122,8 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 24px;
+
+    position: relative;
 }
 
 h2 {
@@ -146,7 +148,7 @@ main > :first-child, main > :nth-child(2) {
     align-self: flex-start;
 }
 
-main > :nth-last-child(2) { /* Seleciona o último p da main */
+main > :nth-last-child(3) { /* Seleciona o último p da main */
     font-size: clamp(1rem, 3vw, 1.5rem);
     margin-top: 24px;
 }
@@ -165,6 +167,23 @@ main > :nth-last-child(2) { /* Seleciona o último p da main */
 #vejaMais-btn:active {
     transform: scale(1.2);
     background-color: rgba(148, 246, 248, 0.699)
+}
+
+#back-Up {
+    color: var(--bg-body);
+    text-decoration: none;
+    text-align: center;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #693f32;
+    border-radius: 50%;
+
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
 }
 
 /* FOOTER */
