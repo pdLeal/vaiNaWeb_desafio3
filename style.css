@@ -21,16 +21,12 @@ body {
 }
 
 /* UTILITY CLASSES */
-.flex {
-    display: flex;
-    align-items: center;
-}
-
 .list {
     margin: 0 auto;
     padding: 1.5em;
     font-size: clamp(14px, 3vw, 20px);
     color: var(--white);
+    display: flex;
     justify-content: space-evenly;
 }
 
@@ -48,11 +44,17 @@ nav > ul > li:first-child {
     font-weight: 700;
 }
 
+.separador {
+    color: var(--bg-body);
+    margin-inline: 8px;
+}
 
 /* HERO */
 .hero {
     color: var(--white);
+    display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 16px;
 }
@@ -98,8 +100,10 @@ main {
     width: 80vw;
     max-width: 1200px;
     margin: 48px auto;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     gap: 24px;
 }
 
@@ -121,16 +125,17 @@ h2 {
     box-shadow: 0 0 10px 0px hsla(0, 0%, 0%, 0.2);
 }
 
-main > :first-child {
+main > :first-child, main > :nth-child(2) {
     align-self: flex-start;
 }
 
-main > :nth-last-child(2) {
+main > :nth-last-child(2) { /* Seleciona o último p da main */
     font-size: clamp(1rem, 3vw, 1.5rem);
     margin-top: 24px;
 }
 
 #vejaMais-btn {
+    width: fit-content;
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-top: -20px;
     cursor: pointer;
@@ -140,7 +145,6 @@ main > :nth-last-child(2) {
 
 /* FOOTER */
 footer {
-    height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -149,21 +153,27 @@ footer {
 
 
 .container-footer {
-    width: 30%;
+    padding: 16px;
     display: flex;
     justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .img-footer {
-    width: 30px;
+    width: clamp(1.3rem, 5vw, 3rem);
 }
 
 .footer-list {
-    width: 50%;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     color: white;
+    padding: 16px;
+    width: 50%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     list-style-type: none;
 }
 
