@@ -2,7 +2,7 @@ const lifeBeat = document.querySelector(".hero-img");
 const main = document.querySelector("main");
 const galeria = document.querySelector(".galeria");
 const vejaMaisBtn = document.getElementById("vejaMais-btn");
-const vejaMais = document.querySelector("main > :nth-last-child(2)");
+const queryBtns = document.querySelectorAll(".queryBtn");
 
 setInterval(() => {
     lifeBeat.classList.add("batida");
@@ -12,17 +12,18 @@ setInterval(() => {
 }, 3000);
 
 const accessKey = "EB4GmlHnnNcT3zafT40oaEkFSNTYC8KlibtZispIQ4c"; // Sou apenas um estudante inocente, por favor, não use minha chave para motivos torpes. Obrigado U.u
+let query = "colorfulness";
 
 async function fetchImage() {
     try {
-        const url = `https://api.unsplash.com/photos/random?query=colorfulness&orientation=landscape&client_id=${accessKey}`;
+        const url = `https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${accessKey}`;
         const response = await fetch(url);
         const data = await response.json();
         const imgUrl = await data.urls.full;
         const alt = await data.alt_description;
         return [imgUrl, alt];
     } catch (err) {
-        console.log(err);
+        return ["./imgs/ps1.jpg", "O limite de imagens foi atingido, fique com este lindo ps1 =)"]
     }
 }
 
@@ -38,4 +39,27 @@ async function addPhotos() {
     }
 }
 
+function changeQuery() {
+    if(!this.classList.contains("selecionado")) {
+        queryBtns.forEach(queryBtn => queryBtn.classList.remove("selecionado"));
+        this.classList.add("selecionado");
+        
+        if(this.classList.contains("arte")) {
+            query = "arteanddesign";
+        } else if (this.classList.contains("estilo")) {
+            query = "styleandmusic";
+        } else {
+            query = "e-bookandvideos";
+        }
+
+    } else {
+        this.classList.remove("selecionado");
+        query = "colorfulness";
+    }
+
+}
+
 vejaMaisBtn.addEventListener("click", addPhotos);
+queryBtns.forEach(queryBtn => {
+    queryBtn.addEventListener("click", changeQuery);
+});

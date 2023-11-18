@@ -40,6 +40,11 @@ ul {
     list-style-type: none;
 }
 
+li > a {
+    text-decoration: none;
+    color: var(--white);
+}
+
 nav > ul > li:first-child {
     font-weight: 700;
 }
@@ -67,6 +72,18 @@ h1 {
 
 .hero-img {
     width: clamp(250px, 50vw, 560px);
+}
+
+.queryBtn {
+    font-size: clamp(14px, 3vw, 20px);
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.selecionado {
+    color: var(--bg-body);
 }
 
 .batida {
@@ -135,12 +152,19 @@ main > :nth-last-child(2) { /* Seleciona o último p da main */
 }
 
 #vejaMais-btn {
-    width: fit-content;
+    width: clamp(38px, 3.5vw, 75px);
+    height: clamp(38px, 3.5vw, 75px);
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-top: -20px;
     cursor: pointer;
     background-color: transparent;
     border: none;
+    border-radius: 50%;
+}
+
+#vejaMais-btn:active {
+    transform: scale(1.2);
+    background-color: rgba(148, 246, 248, 0.699)
 }
 
 /* FOOTER */
