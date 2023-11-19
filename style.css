@@ -14,25 +14,18 @@ html {
     --bg-hero: #129799;
     --bg-body: #FFA185;
     --white: whitesmoke;
+    --default-size: 8px;
+    --x2-size: 16px;
+    --x3-size: 24px;
 }
 
 body {
     background-color: var(--bg-body);
 }
 
-/* UTILITY CLASSES */
-.list {
-    margin: 0 auto;
-    padding: 1.5em;
-    font-size: clamp(14px, 3vw, 20px);
-    color: var(--white);
-    display: flex;
-    justify-content: space-evenly;
-}
-
 /* HEADER */
 header {
-    padding-inline: 8px;
+    padding-inline: var(--default-size);
     background-color: var(--bg-hero);
 }
 
@@ -51,7 +44,16 @@ nav > ul > li:first-child {
 
 .separador {
     color: var(--bg-body);
-    margin-inline: 8px;
+    margin-inline: var(--default-size);
+}
+
+.list {
+    margin: 0 auto;
+    padding: 1.5em;
+    font-size: clamp(14px, 3vw, 20px);
+    color: var(--white);
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /* HERO */
@@ -61,7 +63,7 @@ nav > ul > li:first-child {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap:var(--x2-size);
 }
 
 h1 {
@@ -121,7 +123,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: var(--x3-size);
 
     position: relative;
 }
@@ -134,7 +136,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: var(--x3-size);
 }
 
 .img-galeria {
@@ -150,7 +152,7 @@ main > :first-child, main > :nth-child(2) {
 
 main > :nth-last-child(3) { /* Seleciona o último p da main */
     font-size: clamp(1rem, 3vw, 1.5rem);
-    margin-top: 24px;
+    margin-top: var(--x3-size);
 }
 
 #vejaMais-btn {
@@ -192,12 +194,12 @@ footer {
 
 
 .container-footer {
-    padding: 16px;
+    padding: var(--x2-size);
     display: flex;
     justify-content: space-around;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--default-size)
 }
 
 .img-footer {
@@ -206,14 +208,13 @@ footer {
 
 .footer-list {
     font-size: clamp(0.8rem, 2vw, 1rem);
-    color: white;
-    padding: 16px;
+    color: var(--white);
+    padding: var(--x2-size);
     width: 50%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 8px;
-    list-style-type: none;
+    gap: var(--default-size);
 }
 
 /* RESPONSIVO */
