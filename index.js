@@ -40,26 +40,64 @@ async function addPhotos() {
 }
 
 function changeQuery() {
-    if(!this.classList.contains("selecionado")) {
+    while(galeria.firstChild) {
+        galeria.removeChild(galeria.lastChild);
+    }
+
+    if (!this.classList.contains("selecionado")) {
         queryBtns.forEach(queryBtn => queryBtn.classList.remove("selecionado"));
         this.classList.add("selecionado");
-        
-        if(this.classList.contains("arte")) {
-            query = "arte_and_design";
+
+        if (this.classList.contains("arte")) {
+            query = "art-and-design";
+            addPhotos();
         } else if (this.classList.contains("estilo")) {
-            query = "style_and_music";
+            query = "style-and-music";
+            addPhotos();
         } else {
-            query = "technology_and_future";
+            query = "technology-and-future";
+            addPhotos();
         }
 
     } else {
         this.classList.remove("selecionado");
         query = "colorfulness";
+        addPhotos();
     }
 
 }
 
+function createLink() {
+    const galeriaRect = galeria.getBoundingClientRect();
+
+    if (galeriaRect.y <= 0) {
+        const link = document.createElement("a");
+        link.href = "#header";
+        link.id = "back-Up";
+        link.textContent = "Topo";
+        main.appendChild(link);
+
+        window.removeEventListener("scroll", createLink);
+        window.addEventListener("scroll", deleteLink);
+    }
+}
+
+function deleteLink() {
+    const galeriaRect = galeria.getBoundingClientRect();
+
+    if (galeriaRect.y > 0) {
+        const backUp = document.getElementById("back-Up");
+        main.removeChild(backUp);
+
+        window.removeEventListener("scroll", deleteLink);
+        window.addEventListener("scroll", createLink);
+    }
+}
+
 vejaMaisBtn.addEventListener("click", addPhotos);
+
+window.addEventListener("scroll", createLink);
+
 queryBtns.forEach(queryBtn => {
     queryBtn.addEventListener("click", changeQuery);
 });

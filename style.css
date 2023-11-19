@@ -170,19 +170,15 @@ main > :nth-last-child(3) { /* Seleciona o último p da main */
 }
 
 #back-Up {
-    color: var(--bg-body);
+    color: #C0FF85;
     text-decoration: none;
-    text-align: center;
-    width: 10vw;
-    height: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #693f32;
-    border-radius: 50%;
+    writing-mode: vertical-rl;
+    padding: 8px 2px;
+    border-radius: 2px;
+    background-color: #38426C;
 
     position: fixed;
-    right: 24px;
+    right: 4px;
     bottom: 80px;
 }
 
